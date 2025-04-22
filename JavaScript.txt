@@ -1,0 +1,50 @@
+import java.util.*;
+
+public class FrogFriesOrderApp {
+
+    static class Order {
+        String name;
+        String address;
+        String phone;
+        String details;
+
+        public Order(String name, String address, String phone, String details) {
+            this.name = name;
+            this.address = address;
+            this.phone = phone;
+            this.details = details;
+        }
+
+        public void printReceipt() {
+            System.out.println("\n--- ใบเสร็จรับออเดอร์ ---");
+            System.out.println("ชื่อ: " + name);
+            System.out.println("ที่อยู่: " + address);
+            System.out.println("เบอร์โทร: " + phone);
+            System.out.println("รายการสั่งซื้อ: " + details);
+            System.out.println("ขอบคุณที่อุดหนุน เฟรนช์ฟรายส์ชายกบ! 🐸\n");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("ยินดีต้อนรับสู่ เฟรนช์ฟรายส์ชายกบ 🐸🍟\nกรุณากรอกข้อมูลเพื่อสั่งซื้อ");
+
+        System.out.print("ชื่อ-นามสกุล: ");
+        String name = scanner.nextLine();
+
+        System.out.print("ที่อยู่จัดส่ง: ");
+        String address = scanner.nextLine();
+
+        System.out.print("เบอร์โทรศัพท์: ");
+        String phone = scanner.nextLine();
+
+        System.out.print("รายการสั่งซื้อ (เช่น เฟรนช์ฟรายส์ L + ชีส, ชีสบอล 5 ลูก): ");
+        String details = scanner.nextLine();
+
+        Order order = new Order(name, address, phone, details);
+        order.printReceipt();
+
+        scanner.close();
+    }
+}
